@@ -1,7 +1,7 @@
 # city-explorer-api
 
 **Author**: Mahmoud Saadeh
-**Version**: 1.2.0
+**Version**: 1.3.0
 
 ## Overview
 
@@ -24,6 +24,7 @@ for the design, I only used Bootstrap library and some CSS.
 
 24-5-2021 6:00pm - Application now has a weather feature.
 26-5-2021 7:30pm - Application now has a Movies feature.
+27-5-2021 3:30pm - Separated the main code into different modals and saved the movies that already been searched into the memory and used them when required.
 
 ## Credit and Collaborations
 
@@ -44,3 +45,9 @@ Actual time needed to complete: 2:15 hours.
 Estimate of time needed to complete: 1 hours
 
 Actual time needed to complete: 1:30 hours.
+
+## Name of feature: Cache
+
+Estimate of time needed to complete: 30 Minutes
+
+Actual time needed to complete: 30 Minutes.

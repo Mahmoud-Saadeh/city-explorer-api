@@ -11,11 +11,15 @@ class Movie {
     this.released_on = movie.release_date;
   }
 }
-
+const cachedData = {};
 const movieHandler = (req, res) => {
   const location = req.query;
   if (!location.city_name) {
     res.status(400).send(`Somthing went wrong.`);
+    return;
+  }
+  if (cachedData[location.city_name]) {
+    res.status(200).send(cachedData[location.city_name]);
     return;
   }
   let movies = [];
@@ -36,7 +40,8 @@ const movieHandler = (req, res) => {
       for (let i = 0; i < reqMovies; i++) {
         movies.push(new Movie(response.data.results[i]));
       }
-      res.status(200).send(movies);
+      cachedData[location.city_name] = { movies, date: new Date() };
+      res.status(200).send(cachedData[location.city_name]);
     })
     .catch((error) => {
       console.log(error);
